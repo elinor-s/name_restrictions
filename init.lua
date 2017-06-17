@@ -133,7 +133,7 @@ minetest.register_on_prejoinplayer(function(name, ip)
 
 	-- Generate a regular expression to match all similar names
 	local re = name:gsub(all_chars, char_map)
-	re = "^[_-]*" .. re .. "[_-]*$"
+	re = "^[_-]+" .. re .. "[_-]+$"
 
 	for authName, _ in pairs(minetest.auth_table) do
 		if authName ~= name and authName:match(re) then
